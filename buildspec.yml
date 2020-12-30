@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - curl -sL https://deb.nodesource.com/setup_6.x | -E bash -
+      - apt-get install -y nodejs 
+      - apt-get install -y npm
+  build:
+    commands:
+      - npm run
+artifacts:
+    files:
+        - '**/*'
+    discard-paths: no
+      base-directory: build
+    base-directory: dist
